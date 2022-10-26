@@ -1,14 +1,17 @@
-version: '2'
+version: '3.9'
 services:
   ros:
-    image: jdekarske/homestri-ur5e:rosindocker
-    command: /bin/bash -c "source /catkin_ws/docker-entrypoint.sh && roslaunch moveit_config demo.launch"
+    image: tbarkouki/homestri-ur5e:latest
+    command: tail -F anything
+    #command: /bin/bash -c "source /catkin_ws/docker-entrypoint.sh && roslaunch moveit_config demo.launch"
     environment:
       - DISPLAY=novnc:0.0
     depends_on:
       - novnc
     networks:
       - x11
+    ports:
+      - "50001-50004:50001-50004"
     # logging: # uncomment to hide the logs
     #   driver: none 
 
@@ -25,3 +28,4 @@ services:
       - x11
 networks:
   x11:
+  # http://localhost:8080/vnc_auto.html
