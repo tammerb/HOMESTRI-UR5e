@@ -1,0 +1,3 @@
+roslaunch ur_calibration calibration_correction.launch robot_ip:=192.168.1.102 target_filename:="${HOME}/my_robot_calibration.yaml"
+
+roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.1.102 reverse_ip:=192.168.1.2 kinematics_config:=${HOME}/my_robot_calibration.yaml
