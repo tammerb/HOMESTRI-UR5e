@@ -8,7 +8,7 @@ ECHO_PREFIX="[docker-entrypoint.sh]"
 # echo "$ECHO_PREFIX" "set ROS master: " "$ROS_MASTER_URI"
 
 # ROS installation
-ROS=/opt/ros/melodic/setup.bash
+ROS=/opt/ros/noetic/setup.bash
 source "$ROS"
 echo "$ECHO_PREFIX" "sourced ROS installation:" "$ROS"
 
